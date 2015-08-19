@@ -50,21 +50,20 @@
 
 <p>Key facts:</p>
 
-<p>Worldwide obesity has nearly doubled since 1980.</p>
-
-<p>35% of adults aged 20 and over were overweight in 2008, and 11% were obese.
+<p>Worldwide obesity has nearly doubled since 1980.
+35% of adults aged 20 and over were overweight in 2008, and 11% were obese.
 Obesity is preventable. WHO Obesity and Overweight Factwheet
 Good Nutrition and regular phisical activity are vital for good health and disease prevention. </p>
 
 <h2>BMI diagnostics are measured as follows:</h2>
 
-<p>BMI &lt;18.5 : Underweight</p>
+<p>BMI &lt;18.5 : Under Weight</p>
 
-<p>BMI [18.5-24.9] : Normal weight</p>
+<p>BMI [18.5-24.9] : Normal Weight</p>
 
-<p>BMI [25-29.9] : Overweight</p>
+<p>BMI [25-29.9] : Over Weight</p>
 
-<p>BMI &gt;=30 : Obesity</p>
+<p>BMI &gt;=30 : Obese</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -102,7 +101,13 @@ height &lt;- 71
 
 <pre><code class="r">diagnostic_f&lt;-function(weight,height){
   BMI_value&lt;-weight*703/(height^2)
-  ifelse(BMI_value&lt;12, &quot;Check inputs, if correct you are severely under weight&quot;, ifelse(BMI_value&lt;18.5,&quot;Under Weight&quot;,ifelse(BMI_value&lt;25,&quot;Normal&quot;,ifelse(BMI_value&lt;30,&quot;Over Weight&quot;,ifelse(BMI_value&lt;60, &quot;Obese&quot;, &quot;Check inputs, if correct you are severely over weight&quot;)))))
+  ifelse(BMI_value&lt;12, &quot;Check inputs, if correct you are severely under weight&quot;, 
+         ifelse(BMI_value&lt;18.5,&quot;Under Weight&quot;,ifelse(BMI_value&lt;25,&quot;Normal&quot;,
+                                                     ifelse(BMI_value&lt;30,&quot;Over Weight&quot;,
+                                                            ifelse(BMI_value&lt;60, &quot;Obese&quot;, 
+                                                                   &quot;Check inputs, if correct 
+                                                                   you are severely over
+                                                                   weight&quot;)))))
 }
 </code></pre>
 

@@ -12,25 +12,23 @@ knit        : slidify::knit2slides
 ---
 
 ## Intro & Motivation
-
 Body Mass Index (BMI) is a simple index of weight-for-height that is commonly used to classify underweight, overweight and obesity in adults. It is defined as the weight in pounds divided by the square of the height in inches multiplied by 703 (lbs/in^2)*703.
 
 Key facts:
 
 Worldwide obesity has nearly doubled since 1980.
-
 35% of adults aged 20 and over were overweight in 2008, and 11% were obese.
 Obesity is preventable. WHO Obesity and Overweight Factwheet
 Good Nutrition and regular phisical activity are vital for good health and disease prevention. 
 
 ## BMI diagnostics are measured as follows:
-BMI <18.5 : Underweight
+BMI <18.5 : Under Weight
 
-BMI [18.5-24.9] : Normal weight
+BMI [18.5-24.9] : Normal Weight
 
-BMI [25-29.9] : Overweight
+BMI [25-29.9] : Over Weight
 
-BMI >=30 : Obesity
+BMI >=30 : Obese
 
 ---
 ## How is BMI calculated?
@@ -54,7 +52,13 @@ The function use for calculating the diagnostic is the following:
 ```{r}
 diagnostic_f<-function(weight,height){
   BMI_value<-weight*703/(height^2)
-  ifelse(BMI_value<12, "Check inputs, if correct you are severely under weight", ifelse(BMI_value<18.5,"Under Weight",ifelse(BMI_value<25,"Normal",ifelse(BMI_value<30,"Over Weight",ifelse(BMI_value<60, "Obese", "Check inputs, if correct you are severely over weight")))))
+  ifelse(BMI_value<12, "Check inputs, if correct you are severely under weight", 
+         ifelse(BMI_value<18.5,"Under Weight",ifelse(BMI_value<25,"Normal",
+                                                     ifelse(BMI_value<30,"Over Weight",
+                                                            ifelse(BMI_value<60, "Obese", 
+                                                                   "Check inputs, if correct 
+                                                                   you are severely over
+                                                                   weight")))))
 }
 
 ```
