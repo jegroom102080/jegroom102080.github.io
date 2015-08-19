@@ -1,7 +1,7 @@
 ---
 title       : Body Mass Index (BMI) Calculator
 subtitle    :  (Use arrow keys to navigate)
-author      : Jason E. Groom
+author      : Jason E.Groom
 job         : 
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
